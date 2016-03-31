@@ -1,6 +1,14 @@
 
+function remove_spinner() {
+
+  $("#spinner").css("display", "none");
+  $("#main").css("display", "inline");
+
+}
+
 
 $(document).ready( function() {
+
   $.getJSON("out-report.json", function(json) {
 
     var variants = [];
@@ -24,6 +32,8 @@ $(document).ready( function() {
     $(function() {
       $table.bootstrapTable({data: variants});
     });
+
+    remove_spinner();
 
     return;
 

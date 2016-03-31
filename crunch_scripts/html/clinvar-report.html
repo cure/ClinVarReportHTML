@@ -5,6 +5,7 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/bootstrap-table.css" rel="stylesheet">
     <link href="css/dashboard.css" rel="stylesheet">
+    <link href="css/spinner.css" rel="stylesheet">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
 
@@ -33,22 +34,29 @@
 
         <h1>ClinVar Report</h1>
         <p></p>
-        <table id="table"
-            data-flat="true"
-            data-show-columns="true"
-            data-show-multi-sort="true"
-            data-search="true"
-            data-filter-control="true"
-            data-sort-priority='[{"sortName": "variants.clinical_significance","sortOrder":"desc"},{"sortName":"variants.allele_freq","sortOrder":"desc"}]' >
-          <thead>
-            <tr>
-              <th data-field="html_link_name" data-sortable="true">Name</th>
-              <th data-field="clinical_significance" data-filter-control="select" data-sortable="true">Significance</th>
-              <th data-field="allele_freq" data-sortable="true">Allele Freq.</th>
-              <th data-field="zygosity" data-sortable="true">Zygosity</th>
-            </tr>
-          </thead>
-        </table>
+
+        <div id="spinner" class="spinner spinner-32px spinner-h-center"></div>
+
+
+        <div id="main" style="display:none;">
+          <table id="table"
+              data-flat="true"
+              data-show-columns="true"
+              data-show-multi-sort="true"
+              data-search="true"
+              data-filter-control="true"
+              data-sort-priority='[{"sortName": "variants.clinical_significance","sortOrder":"desc"},{"sortName":"variants.allele_freq","sortOrder":"desc"}]' >
+            <thead>
+              <tr>
+                <th data-field="html_link_name" data-sortable="true">Name</th>
+                <th data-field="clinical_significance" data-filter-control="select" data-sortable="true">Significance</th>
+                <th data-field="allele_freq" data-sortable="true">Allele Freq.</th>
+                <th data-field="zygosity" data-sortable="true">Zygosity</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+
     </div>
 
   </div> <!-- container -->
