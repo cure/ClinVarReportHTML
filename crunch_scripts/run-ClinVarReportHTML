@@ -9,7 +9,7 @@ export PATH=$PATH:$CRUNCH_SRC:$CRUNCH_SRC/crunch_scripts:$CRUNCH_SRC/crunch_scri
 mntdir=`arv-dax keep`
 jobparam=`arv-dax script_parameters`
 
-ifn=$mntdir/`echo "$jobparam" | jq -r '.INPUT_FILE'`
+ifn=$mntdir/`echo "$jobparam" | jq -r '.INPUT_FILE'`/output
 REPORTID=`echo "$jobparam" | jq -r '.REPORT_ID'`
 
 cp -R $CRUNCH_SRC/crunch_scripts/html/* .
